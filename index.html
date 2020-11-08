@@ -16,38 +16,38 @@
 
     <div class="buyables">
         <div class="buyable">
-            <div class="buyable_amount">0</div>
+            <div class="buyable_amount" id="num1">0</div>
             <div class="buyable_text">
                 <div class="buyable_title">
-                    <span class="buyable_title_txt">Late Loan Repayment</span>
-                    <span class="buyable_title_price">Max score: 750</span>
+                    <span class="buyable_title_txt">Destroy Calendar</span>
+                    <span class="buyable_title_price"  id="price1">Max score: 750</span>
                 </div>
                 <div class="buyable_body">
                     <div class="buyable_body_text">
-                        <div class="buyable_desc">Can I have an extension?</div>
-                        <div class="buyable_effect">Reduce your credit score by 2 per click</div>
+                        <div class="buyable_desc">You can't repay your loan on time if you don't know what the time is!</div>
+                        <div class="buyable_effect">Reduce your credit score by an extra 1 per click</div>
                     </div>
                     <div class="buyable_btn_area">
-                        <button class="buyable_btn">Repay Late!</button>
+                        <button class="buyable_btn" onClick="upgrade1()">Repay Late!</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="buyable">
-            <div class="buyable_amount">0</div>
+            <div class="buyable_amount" id="num2">0</div>
             <div class="buyable_text">
                 <div class="buyable_title">
                     <span class="buyable_title_txt">Apply for Credit Card</span>
-                    <span class="buyable_title_price">Max score: 650</span>
+                    <span class="buyable_title_price" id="price2">Max score: 650</span>
                 </div>
                 <div class="buyable_body">
                     <div class="buyable_body_text">
                         <div class="buyable_desc">Because you can never have too many...</div>
-                        <div class="buyable_effect">Reduce your credit score by 5 per click</div>
+                        <div class="buyable_effect">Reduce your credit score by an extra 5 per click</div>
                     </div>
                     <div class="buyable_btn_area">
-                        <button class="buyable_btn">Apply!</button>
+                        <button class="buyable_btn" onClick="upgrade2()">Apply!</button>
                     </div>
                 </div>
             </div>
@@ -57,10 +57,64 @@
     <script>
         var credit_score = 800;
         var interval = 1; // determines how much to reduce the score by
+        var num1 = 0;
+        var num2 = 0;
 
         function reduce_score() {
             credit_score -= interval;
             document.getElementById("score").innerHTML = "Credit Score: " + credit_score;
+            update_colour();
+        }
+
+        function update_colour() {
+            if (credit_score >= 750) {
+                document.getElementById("score").style.color = "#16d94a";
+            }
+            else if (credit_score >= 700) {
+                document.getElementById("score").style.color = "#0b7d2a";
+            }
+            else if (credit_score >= 600) {
+                document.getElementById("score").style.color = "#d5e805";
+            }
+            else if (credit_score >= 400) {
+                document.getElementById("score").style.color = "#d68802";
+            }
+            else if (credit_score >= 100) {
+                document.getElementById("score").style.color = "#e80000";
+            }
+            else {
+                document.getElementById("score").style.color = "#7a0000";
+            }
+        }
+
+        function upgrade1() {
+            if (credit_score <= 750) {
+                document.getElementById("price1").style.color = "black";
+                credit_score += 50;
+                document.getElementById("score").innerHTML = "Credit Score: " + credit_score;
+                num1 += 1;
+                document.getElementById("num1").innerHTML = num1;
+                interval += 1;
+                update_colour();
+            }
+            else {
+                document.getElementById("price1").style.color = "#cc1100";
+            }
+        }
+
+        function upgrade2() {
+            if (credit_score <= 650) {
+                document.getElementById("price2").style.color = "black";
+                credit_score += 150;
+                document.getElementById("score").innerHTML = "Credit Score: " + credit_score;
+                num2 += 1;
+                document.getElementById("num2").innerHTML = num2;
+                interval += 5;
+                update_colour();
+            }
+            else {
+                document.getElementById("price2").style.color = "#cc1100";
+            }
         }
     </script>
 </body>
