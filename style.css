@@ -38,10 +38,11 @@ body {
 }
   
 .clicker_btn {
-    background-image: url("assets/creditcard_icon.svg");
+    background-image: url("assets/creditcard_icon.png");
     background-size: cover;
     height: 150px;
     width: 250px;
+    border-radius: 10px;
 
     background-color: #fdf6e3;
     border: none;
