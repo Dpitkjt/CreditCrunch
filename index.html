@@ -170,13 +170,13 @@
             }
         }
 
-        function upgrade4() {
+        function upgrade4() { // should be a one-time upgrade
             if (credit_score <= 300) {
                 document.getElementById("price4").style.color = "black";
                 credit_score += 500;
                 document.getElementById("score").innerHTML = "Credit Score: " + credit_score;
                 num2 += 1;
-                document.getElementById("num4").innerHTML = num2;
+                document.getElementById("num4").innerHTML = num4;
                 start_auto();
                 update_colour();
             }
