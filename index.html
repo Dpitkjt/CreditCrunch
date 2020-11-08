@@ -52,6 +52,44 @@
                 </div>
             </div>
         </div>
+
+        <div class="buyable">
+            <div class="buyable_amount" id="num3">0</div>
+            <div class="buyable_text">
+                <div class="buyable_title">
+                    <span class="buyable_title_txt">Max Out Credit Card</span>
+                    <span class="buyable_title_price"  id="price3">Max score: 500</span>
+                </div>
+                <div class="buyable_body">
+                    <div class="buyable_body_text">
+                        <div class="buyable_desc">Did you really need that many bananas?</div>
+                        <div class="buyable_effect">Reduce your credit score by an extra 10 per click</div>
+                    </div>
+                    <div class="buyable_btn_area">
+                        <button class="buyable_btn" onClick="upgrade3()">Max Out!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buyable">
+            <div class="buyable_amount" id="num4">0</div>
+            <div class="buyable_text">
+                <div class="buyable_title">
+                    <span class="buyable_title_txt">Hire Monkeys To Apply For More Loans</span>
+                    <span class="buyable_title_price"  id="price4">Max score: 300</span>
+                </div>
+                <div class="buyable_body">
+                    <div class="buyable_body_text">
+                        <div class="buyable_desc">Oh, so that's what the bananas were for...</div>
+                        <div class="buyable_effect">Reduce your credit score by 5 per second</div>
+                    </div>
+                    <div class="buyable_btn_area">
+                        <button class="buyable_btn" onClick="upgrade4()">Monkeys!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -116,6 +154,44 @@
                 document.getElementById("price2").style.color = "#cc1100";
             }
         }
+
+        function upgrade3() {
+            if (credit_score <= 500) {
+                document.getElementById("price3").style.color = "black";
+                credit_score += 300;
+                document.getElementById("score").innerHTML = "Credit Score: " + credit_score;
+                num2 += 1;
+                document.getElementById("num3").innerHTML = num2;
+                interval += 10;
+                update_colour();
+            }
+            else {
+                document.getElementById("price3").style.color = "#cc1100";
+            }
+        }
+
+        function upgrade4() {
+            if (credit_score <= 300) {
+                document.getElementById("price4").style.color = "black";
+                credit_score += 500;
+                document.getElementById("score").innerHTML = "Credit Score: " + credit_score;
+                num2 += 1;
+                document.getElementById("num4").innerHTML = num2;
+                start_auto();
+                update_colour();
+            }
+            else {
+                document.getElementById("price4").style.color = "#cc1100";
+            }
+        }
+
+        function start_auto() {
+            setInterval(function(){ 
+                credit_score -= 5;
+                document.getElementById("score").innerHTML = "Credit Score: " + credit_score;
+            }, 1000);
+        }
+        
     </script>
 </body>
 </html>
