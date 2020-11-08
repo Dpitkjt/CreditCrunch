@@ -1,0 +1,99 @@
+html {
+    height: 100%;
+}
+  
+body {
+    margin: 0;
+    height: 100%;
+}
+  
+.clicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #002b35;
+    height: 50%;
+}
+  
+.buyables {
+    background: #fdf6e3;
+    height: 50%;
+    overflow: auto;
+}
+
+.clicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clicker_btn_area {
+    font-size: 24px;
+    text-align: center;
+
+    background: #fdf6e3;
+    border-radius: 8px;
+    opacity: .8;
+    padding: 30px;
+}
+  
+.clicker_btn {
+    background-image: url("assets/creditcard_icon.svg");
+    background-size: cover;
+    height: 150px;
+    width: 250px;
+
+    background-color: #fdf6e3;
+    border: none;
+    outline: none;
+}
+
+.buyable {
+    display: flex;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #002b36;
+    border-radius: 8px;
+    width: 98%;
+    height: 90px;
+}
+
+.buyable_amount {
+    align-self: center;
+    font-size: 24px;
+}
+  
+.buyable_text {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.buyable_title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.buyable_title_txt {
+    font-weight: bold;
+}
+
+.buyable_effect {
+    font-size: 12px;
+}
+
+.buyable_body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buyable_btn {
+    align-self: center;
+    background: none;
+    border: 2px solid #859900;
+    border-radius: 8px;
+    color: #859900;
+    font-size: 20px;
+    height: 40px;
+    width: 120px;
+}

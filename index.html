@@ -2,21 +2,66 @@
 <html>
 <head>
     <title>Credit Crunch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-    <h1>Credit Crunch: Bring your credit score to the floor</h1>
-    <div> Credit Score: 800
-        <div>
-            <button>Take Out Loan!</button>
+    <div class="clicker"> 
+        <div class="clicker_btn_area">
+            <div  id="score">Credit Score: 800</div>
+            <button class="clicker_btn" onClick="reduce_score()"></button>
         </div>
     </div>
-    <div>
-        Number of Late Repayments: 0
-        Max score: 750
-        <div>
-            <button>Repay Loan Late!</button>
+
+    <div class="buyables">
+        <div class="buyable">
+            <div class="buyable_amount">0</div>
+            <div class="buyable_text">
+                <div class="buyable_title">
+                    <span class="buyable_title_txt">Late Loan Repayment</span>
+                    <span class="buyable_title_price">Max score: 750</span>
+                </div>
+                <div class="buyable_body">
+                    <div class="buyable_body_text">
+                        <div class="buyable_desc">Can I have an extension?</div>
+                        <div class="buyable_effect">Reduce your credit score by 2 per click</div>
+                    </div>
+                    <div class="buyable_btn_area">
+                        <button class="buyable_btn">Repay Late!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buyable">
+            <div class="buyable_amount">0</div>
+            <div class="buyable_text">
+                <div class="buyable_title">
+                    <span class="buyable_title_txt">Apply for Credit Card</span>
+                    <span class="buyable_title_price">Max score: 650</span>
+                </div>
+                <div class="buyable_body">
+                    <div class="buyable_body_text">
+                        <div class="buyable_desc">Because you can never have too many...</div>
+                        <div class="buyable_effect">Reduce your credit score by 5 per click</div>
+                    </div>
+                    <div class="buyable_btn_area">
+                        <button class="buyable_btn">Apply!</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        var credit_score = 800;
+        var interval = 1; // determines how much to reduce the score by
+
+        function reduce_score() {
+            credit_score -= interval;
+            document.getElementById("score").innerHTML = "Credit Score: " + credit_score;
+        }
+    </script>
 </body>
 </html>
