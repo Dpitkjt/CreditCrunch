@@ -1,5 +1,6 @@
 # CreditCrunch
 
+Winner of Funniest Hack at Hack Sheffield 6!
 CreditCrunch is a classic clicker game with one goal: how low can your credit score go?
 
 ## Description
